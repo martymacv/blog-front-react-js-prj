@@ -8,8 +8,17 @@
   src: url("../src/assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf") format("woff2");
 }
 
+@font-face {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("../src/assets/fonts/Lato/Lato-Regular.ttf") format("woff2");
+}
+
 @theme {
   --font-roboto: "Roboto", sans-serif; 
+  --font-lato: "Lato", sans-serif; 
   --text-button: 12px; 
   --text-button--font-weight: 500;
   --text-button--line-height: 100%;

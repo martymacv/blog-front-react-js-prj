@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Sidebar from "../components/sidebar";
+import Stories from "../components/Stories";
 
 function Home() {
   return (
@@ -11,8 +12,8 @@ function Home() {
             <header>
                 <Header/>
             </header>
-            <main>
-                
+            <main className="flex flex-col w-full items-center">
+                <Stories></Stories>
             </main>
         </div>      
     </div>
