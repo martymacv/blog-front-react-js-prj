@@ -15,4 +15,5 @@
   --text-button--line-height: 100%;
   --text-button--letter-spacing: 0%;
   --shadow-sidebar: 5px 0px 15px 0px rgba(5, 5, 5, 0.1);
+  --shadow-header: 0px 5px 22px 0px rgba(0, 0, 0, 0.25);
 }
