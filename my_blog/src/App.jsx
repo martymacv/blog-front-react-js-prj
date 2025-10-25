@@ -1,12 +1,9 @@
-import './App.css'
-import SidebarBox from './components/sidebar'
-import MainContent from './components/MainContent'
+import Sidebar from './components/sidebar'
 
 function App() {
   return (
-    <div className='home'>
-      <SidebarBox/>
-      <MainContent/>
+    <div>
+      <Sidebar/>
     </div>
   )
 }

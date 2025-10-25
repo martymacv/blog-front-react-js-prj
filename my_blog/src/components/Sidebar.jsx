@@ -1,36 +1,29 @@
-import './Sidebar.css'
+import { Link } from 'react-router-dom'
 
-export default function SidebarBox() {
+export default function Sidebar() {
     return (
-        <div className="sidebar-box">
-            <Sidebar/>
-            <div className="empty"></div>
-        </div>
-    );
-}
-
-function Sidebar() {
-    return (
-        <div className="sidebar">
-            <img className="wallpaper" src="src/assets/images/wallpaper.png" alt="wallpaper" />
-            <img className="avatar" src="src/assets/images/avatar.png" alt="avatar" />
-            <div className="user-info">
-                <p className="username">Ролан Закиров</p>
-                <p className="profession">Front-end разработчик</p>
+        <sidebar className="flex flex-col gap-4 w-xs bg-[#202020ff] items-center justify-center">
+            <div className='relative flex flex-col items-center justify-start w-full h-[230px] mb-3'>
+                <img className='w-full' src="src/assets/images/wallpaper.png" alt="wallpaper" />
+                <div className='absolute rounded-full border-2 border-white top-[140px]'>
+                    <img className='w-[100px]' src="src/assets/images/avatar.png" alt="avatar" />
+                </div>
             </div>
-            <div role="content-box" className="social">
-                <img className="instagram" src="src/assets/images/instagram.svg" alt="instagramm-link" />
-                <img className="vk" src="src/assets/images/vk.svg" alt="vk-link" />
+            <div className='flex flex-col items-center justify-center'>
+                <h1 className='text-white text-2xl'>Ролан Закиров</h1>
+                <p className='text-white'>Front-end разработчик</p>
             </div>
-            <hr className="hline1"/>
-            <p className="about-self">
-                Front-end разработчик. Практик верстки сайтов.Созданием сайтов занимаюсь с 2012 года. Работал в нескольких ИТ компаниях и наработал более 10 000 часов в создании сайтов различной сложности.
-            </p>
-            <hr className="hline2"/>
-            <section className="sidebar-buttons">
-                <button className="portfolio">Мои работы</button>
-                <button className="send-me">Написать мне</button>
-            </section>
-        </div>
+            <div className='flex flex-row gap-4 items-center justify-center pb-3'>
+                <img src="src/assets/images/instagram.svg" alt="instagram" />
+                <img src="src/assets/images/vk.svg" alt="vk" />
+            </div>
+            <hr className='border-1 w-[260px] border-[#1c1c1cff]' />
+            <p className='text-white text-center py-3 px-5'>Front-end разработчик. Практик верстки сайтов. Созданием сайтов занимаюсь с 2012 года. Работал в нескольких ИТ компаниях и наработал более 10 000 часов в создании сайтов различной сложности.</p>
+            <hr className='border-1 w-[260px] border-[#1c1c1cff]' />
+            <div className='flex flex-row gap-5 items-center justify-center p-4'>
+                <button className='text-white bg-[#ed3024ff] rounded-full w-[120px] h-[40px]' type='button'>Мои работы</button>
+                <button className='text-white bg-[#3137c9ff] rounded-full w-[120px] h-[40px]' type='button'>Написать мне</button>
+            </div>
+        </sidebar>
     );
 }
