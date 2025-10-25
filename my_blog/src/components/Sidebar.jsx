@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
     return (
-        <sidebar className="flex flex-col shadow-sidebar gap-4 min-h-0 w-[300px] bg-[#202020ff] items-center justify-center">
+        <>
             <div className='relative flex flex-col items-center justify-start w-full h-[230px] mb-3'>
                 <img className='w-full' src="src/assets/images/wallpaper.png" alt="wallpaper" />
                 <div className='absolute rounded-full border-2 border-white top-[130px]'>
@@ -24,6 +24,6 @@ export default function Sidebar() {
                 <button className='text-white font-roboto text-button bg-[#ed3024ff] rounded-full w-[120px] h-[40px]' type='button'>Мои работы</button>
                 <button className='text-white font-roboto text-button bg-[#3137c9ff] rounded-full w-[120px] h-[40px]' type='button'>Написать мне</button>
             </div>
-        </sidebar>
+        </>
     );
 }

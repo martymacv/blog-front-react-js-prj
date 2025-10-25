@@ -1,9 +1,20 @@
 import Header from "../components/Header";
+import Sidebar from "../components/sidebar";
 
 function Home() {
   return (
-    <div>
-        <Header/>
+    <div className="flex flex-row min-h-screen min-w-full bg-[#181818ff]">
+        <aside className="flex flex-col shadow-sidebar gap-4 min-h-full w-[300px] bg-[#202020ff] items-center">
+            <Sidebar/>
+        </aside>
+        <div className="flex flex-col w-full">
+            <header>
+                <Header/>
+            </header>
+            <main>
+                
+            </main>
+        </div>      
     </div>
   );
 }
