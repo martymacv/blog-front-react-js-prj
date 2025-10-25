@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 
 export default function Sidebar() {
     return (
-        <sidebar className="flex flex-col shadow-sidebar gap-4 w-xs bg-[#202020ff] items-center justify-center">
+        <sidebar className="flex flex-col shadow-sidebar gap-4 min-h-0 w-[300px] bg-[#202020ff] items-center justify-center">
             <div className='relative flex flex-col items-center justify-start w-full h-[230px] mb-3'>
                 <img className='w-full' src="src/assets/images/wallpaper.png" alt="wallpaper" />
-                <div className='absolute rounded-full border-2 border-white top-[140px]'>
-                    <img className='w-[100px]' src="src/assets/images/avatar.png" alt="avatar" />
+                <div className='absolute rounded-full border-2 border-white top-[130px]'>
+                    <img className='w-[98px]' src="src/assets/images/avatar.png" alt="avatar" />
                 </div>
             </div>
             <div className='flex flex-col items-center justify-center'>
