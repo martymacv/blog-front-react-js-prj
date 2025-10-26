@@ -4,6 +4,7 @@ import Stories from "../components/Stories";
 import AddPost from "../components/AddPost";
 import SimplePost from "../components/SimplePost";
 import VideoPost from "../components/VideoPost";
+import NormalPost from "../components/NormalPost";
 
 function Home() {
   return (
@@ -20,7 +21,9 @@ function Home() {
                 <AddPost></AddPost>
                 <SimplePost></SimplePost>
                 <VideoPost></VideoPost>
+                <NormalPost></NormalPost>
             </main>
+            <footer className="h-15"></footer>
         </div>      
     </div>
   );
