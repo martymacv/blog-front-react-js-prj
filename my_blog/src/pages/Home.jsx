@@ -5,6 +5,7 @@ import AddPost from "../components/HomePage/AddPost";
 import SimplePost from "../components/HomePage/SimplePost";
 import VideoPost from "../components/HomePage/VideoPost";
 import NormalPost from "../components/HomePage/NormalPost";
+import PageNav from "../components/HomePage/PageNav";
 
 function Home() {
   return (
@@ -23,7 +24,9 @@ function Home() {
                 <VideoPost></VideoPost>
                 <NormalPost></NormalPost>
             </main>
-            <footer className="h-15"></footer>
+            <footer className="p-12">
+                <PageNav></PageNav>
+            </footer>
         </div>      
     </div>
   );

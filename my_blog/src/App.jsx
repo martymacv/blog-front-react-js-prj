@@ -1,8 +1,6 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
 
-import Sidebar from './components/sidebar'
-import Header from './components/Header'
 import Home from "./pages/Home";
 
 const router = createBrowserRouter([
