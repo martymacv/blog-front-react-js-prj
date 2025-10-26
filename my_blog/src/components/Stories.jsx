@@ -2,8 +2,9 @@ import { Link } from "react-router-dom"
 
 function Stories() {
     return (
-        <ul className="grid lg:grid-cols-4 grid-cols-2 grid-rows-2 gap-3 mt-15 mx-12 items-center justify-center">
-            <li>
+        <div className="w-full mt-15 px-12">
+        <ul className="flex flex-row flex-wrap gap-3 items-center justify-between w-full">
+            <li className="flex items-center justify-center">
                 <Link className="relative flex h-[195px] w-[140px]">
                     <img className="rounded-md h-full w-full object-cover" src="src/assets/images/Rectangle 4-3.png" alt="" />
                     <div className="absolute flex flex-col justify-between h-full p-3">
@@ -12,7 +13,7 @@ function Stories() {
                     </div>
                 </Link>
             </li>
-            <li>
+            <li className="flex items-center justify-center">
                 <Link className="relative flex h-[195px] w-[140px]">
                     <img className="rounded-md h-full w-full object-cover" src="src/assets/images/Rectangle 4-2.png" alt="" />
                     <div className="absolute flex flex-col justify-between h-full p-3">
@@ -21,7 +22,7 @@ function Stories() {
                     </div>
                 </Link>
             </li>
-            <li>
+            <li className="flex items-center justify-center">
                 <Link className="relative flex h-[195px] w-[140px]">
                     <img className="rounded-md h-full w-full object-cover" src="src/assets/images/Rectangle 4-1.png" alt="" />
                     <div className="absolute flex flex-col justify-between h-full p-3">
@@ -30,7 +31,7 @@ function Stories() {
                     </div>
                 </Link>
             </li>
-            <li>
+            <li className="flex items-center justify-center">
                 <Link className="relative flex h-[195px] w-[140px]">
                     <img className="rounded-md h-full w-full object-cover" src="src/assets/images/Rectangle 4.png" alt="" />
                     <div className="absolute flex flex-col justify-between h-full p-3">
@@ -40,6 +41,7 @@ function Stories() {
                 </Link>
             </li>
         </ul>
+        </div>
     );
 }
 

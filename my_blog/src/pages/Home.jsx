@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Sidebar from "../components/sidebar";
 import Stories from "../components/Stories";
+import AddPost from "../components/AddPost";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
             </header>
             <main className="flex flex-col w-full items-center">
                 <Stories></Stories>
+                <AddPost></AddPost>
             </main>
         </div>      
     </div>
