@@ -3,6 +3,7 @@ import Sidebar from "../components/sidebar";
 import Stories from "../components/Stories";
 import AddPost from "../components/AddPost";
 import SimplePost from "../components/SimplePost";
+import VideoPost from "../components/VideoPost";
 
 function Home() {
   return (
@@ -18,6 +19,7 @@ function Home() {
                 <Stories></Stories>
                 <AddPost></AddPost>
                 <SimplePost></SimplePost>
+                <VideoPost></VideoPost>
             </main>
         </div>      
     </div>
