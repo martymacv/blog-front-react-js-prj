@@ -2,10 +2,11 @@ import Header from "../components/Header";
 import Sidebar from "../components/sidebar";
 import Stories from "../components/Stories";
 import AddPost from "../components/AddPost";
+import SimplePost from "../components/SimplePost";
 
 function Home() {
   return (
-    <div className="flex flex-row min-h-screen min-w-full bg-[#181818ff]">
+    <div className="flex flex-row min-h-screen min-w-[680px] max-w-[1000px] bg-[#181818ff]">
         <aside className="flex flex-col shadow-sidebar gap-4 min-h-full w-[300px] bg-[#202020ff] items-center">
             <Sidebar/>
         </aside>
@@ -16,6 +17,7 @@ function Home() {
             <main className="flex flex-col w-full items-center">
                 <Stories></Stories>
                 <AddPost></AddPost>
+                <SimplePost></SimplePost>
             </main>
         </div>      
     </div>
