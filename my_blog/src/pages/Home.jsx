@@ -1,10 +1,10 @@
-import Header from "../components/Header";
+import Header from "../components/HomePage/Header";
 import Sidebar from "../components/sidebar";
-import Stories from "../components/Stories";
-import AddPost from "../components/AddPost";
-import SimplePost from "../components/SimplePost";
-import VideoPost from "../components/VideoPost";
-import NormalPost from "../components/NormalPost";
+import Stories from "../components/HomePage/Stories";
+import AddPost from "../components/HomePage/AddPost";
+import SimplePost from "../components/HomePage/SimplePost";
+import VideoPost from "../components/HomePage/VideoPost";
+import NormalPost from "../components/HomePage/NormalPost";
 
 function Home() {
   return (
