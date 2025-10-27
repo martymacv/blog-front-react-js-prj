@@ -1,23 +1,24 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 
-
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
+import PostDetail from "./pages/PostDetail";
 
 const router = createBrowserRouter([
   {
-    path: "/", element: <Home />,
-    // element: <Layout />,
-    // children: [
-    //   { index: true, element: <Home /> },
-    //   { path: "old-home", element: <Navigate to={"/"} /> },
-    //   { path: "about", element: <About /> },
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      // { path: "old-home", element: <Navigate to={"/"} /> },
+      { path: "post/:postId", element: <PostDetail /> },
     //   { path: "cart", element: <Cart /> },
     //   { path: "thanks", element: <Thanks /> },
     //   { path: "category/:categoryId", element: <Category /> },
     //   { path: "product/:productId", element: <ProductDetails /> },
     //   { path: "*", element: <NotFound /> },
       // { path: "*", element: <Navigate to="/" /> },
-    // ],
+    ],
   },
 ]);
 

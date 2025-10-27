@@ -19,8 +19,10 @@ function NormalPost() {
                         <Link className="font-lato text-[#828282ff] text-[12px] font-[400]">
                             создание сайтов</Link>
                     </div>
-                    <Link className="font-roboto text-[#107effff] text-[14px] font-[400]">
-                    читать</Link>
+                    <Link to={"/post/1"}
+                        className="font-roboto text-[#107effff] text-[14px] font-[400]">
+                            читать
+                    </Link>
                 </div>
             </div>
         </div>
