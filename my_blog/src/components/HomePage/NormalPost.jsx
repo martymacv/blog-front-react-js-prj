@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function NormalPost() {
     return (
-        <div className="flex flex-col w-full mt-7 px-12 rounded-t-md">
+        <div className="flex flex-col w-full mt-7 rounded-t-md">
             <img className="rounded-t-md"
                 src="src/assets/images/Rectangle 5-1.png" alt="" />
             <div className="flex flex-col gap-3 p-6 bg-[#202020ff] rounded-b-md shadow-simple-post">

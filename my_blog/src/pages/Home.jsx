@@ -9,15 +9,15 @@ import PageNav from "../components/HomePage/PageNav";
 
 function Home() {
   return (
-    <div>
-        <main className="flex flex-col w-full items-center">
+    <div className="mx-12">
+        <main className="flex flex-col w-full items-center max-w-150">
             <Stories></Stories>
             <AddPost></AddPost>
             <SimplePost></SimplePost>
             <VideoPost></VideoPost>
             <NormalPost/>
         </main>
-        <footer className="p-12">
+        <footer className="my-12 max-w-150">
             <PageNav></PageNav>
         </footer>
     </div>

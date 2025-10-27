@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function Stories() {
     return (
-        <div className="w-full mt-15 px-12">
+        <div className="w-full mt-15">
         <ul className="flex flex-row flex-wrap gap-3 items-center justify-between w-full">
             <li className="flex items-center justify-center">
                 <Link className="relative flex h-[195px] w-[140px]">

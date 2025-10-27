@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function VideoPost() {
     return (
-        <div className="w-full mt-7 px-12">
+        <div className="w-full mt-7">
             <div className="flex flex-col gap-3 p-6 bg-[#202020ff] rounded-md shadow-simple-post">
                 <div className="flex items-center justify-center">
                     <img className="w-full object-cover" src="src/assets/images/Rectangle 5.png" alt="" />
