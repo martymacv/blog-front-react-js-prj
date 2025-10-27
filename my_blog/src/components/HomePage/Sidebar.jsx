@@ -6,7 +6,7 @@ export default function Sidebar() {
             <div className='relative flex flex-col items-center justify-start w-full h-[230px] mb-3'>
                 <img className='w-full' src="../src/assets/images/wallpaper.png" alt="wallpaper" />
                 <div className='absolute rounded-full border-2 border-white top-[130px]'>
-                    <img className='w-[98px]' src="../src/assets/images/avatar.png" alt="avatar" />
+                    <img className='w-[98px]' src="../src/assets/images/avatars/avatar.png" alt="avatar" />
                 </div>
             </div>
             <div className='flex flex-col items-center justify-center'>

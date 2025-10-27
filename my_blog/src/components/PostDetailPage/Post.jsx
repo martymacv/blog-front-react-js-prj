@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom"
+import Comments from "../generals/Comments"
 
 function Post() {
     return (
-        <div className="flex flex-col w-full mt-7 px-12 rounded-t-md">
-            {/* <img className="rounded-t-md"
-                src="src/assets/images/Rectangle 5-1.png" alt="" /> */}
+        <div className="flex flex-col w-full my-7 px-12 rounded-t-md">
             <div className="flex flex-col gap-3 p-6 bg-[#202020ff] rounded-b-md shadow-simple-post">
                 <nav className="flex flex-row justify-between">
                     <Link to={"/"}
@@ -82,25 +81,9 @@ function Post() {
                         <button className="w-[91px] h-[30px] bg-[#3137c9ff] rounded-md font-roboto text-[#ffffffff] text-[12px] font-normal"
                             type="button">Отправить</button>
                     </form>
-                    <section>
-                        <ul className="grid grid-rows-2 grid-cols-2 gap-2">
-                            <li className="flex flex-col">
-                                <Link className="font-roboto text-[#f3ea2bff] text-[14px] leading-[21px] font-medium">
-                                    Как я сходил на FrontEnd Conf 2021
-                                </Link>
-                                <span className="font-lato text-[#828282ff] text-[12px] font-[400]">21.06.2020</span>
-                            </li>
-                            <ul className="grid grid-rows-2 grid-cols-2 gap-2">
-                                <li className="flex flex-col">
-                                    <Link className="font-roboto text-[#f3ea2bff] text-[14px] leading-[21px] font-medium">
-                                        Как я сходил на FrontEnd Conf 2021
-                                    </Link>
-                                    <span className="font-lato text-[#828282ff] text-[12px] font-[400]">21.06.2020</span>
-                                </li>
-                            </ul>
-                        </ul>
-                    </section>
+                    <Comments/>
                 </section>
+                
             </div>
         </div>
     )
