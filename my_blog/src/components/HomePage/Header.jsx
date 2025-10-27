@@ -14,6 +14,11 @@ function Header() {
                         Обо мне
                     </NavLink>
                 </li>
+                <li className="text-white text-[11px] font-[400] font-roboto uppercase">
+                    <NavLink to={"/login"}>
+                        Войти
+                    </NavLink>
+                </li>
             </ul>
         </nav>
     )
