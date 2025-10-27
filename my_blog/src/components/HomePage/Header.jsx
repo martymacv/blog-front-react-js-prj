@@ -15,6 +15,11 @@ function Header() {
                     </NavLink>
                 </li>
                 <li className="text-white text-[11px] font-[400] font-roboto uppercase">
+                    <NavLink to={"/profile/1"}>
+                        Профиль
+                    </NavLink>
+                </li>
+                <li className="text-white text-[11px] font-[400] font-roboto uppercase">
                     <NavLink to={"/login"}>
                         Войти
                     </NavLink>

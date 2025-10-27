@@ -9,7 +9,7 @@ import PageNav from "../components/HomePage/PageNav";
 
 function Home() {
   return (
-    <>
+    <div>
         <main className="flex flex-col w-full items-center">
             <Stories></Stories>
             <AddPost></AddPost>
@@ -20,7 +20,7 @@ function Home() {
         <footer className="p-12">
             <PageNav></PageNav>
         </footer>
-    </>
+    </div>
   );
 }
 

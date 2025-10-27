@@ -4,7 +4,8 @@ import Sidebar from "./HomePage/Sidebar";
 
 function Layout() {
   return (
-    <div id="header"className="flex flex-row min-h-screen min-w-[680px] max-w-[1000px] bg-[#181818ff]">
+    // <div id="header"className="flex flex-row min-h-screen min-w-[680px] max-w-[1000px] bg-[#181818ff]">
+    <div id="header"className="flex flex-row min-h-screen w-full bg-[#181818ff]">
         <aside className="flex flex-col shadow-sidebar gap-4 min-h-full w-[300px] bg-[#202020ff] items-center">
             <Sidebar/>
         </aside>
@@ -12,7 +13,7 @@ function Layout() {
             <header>
                 <Header/>
             </header>
-            <Outlet/>
+            <Outlet className="w-full"/>
         </div>
     </div>
   );
