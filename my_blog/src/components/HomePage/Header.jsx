@@ -1,7 +1,33 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom"
+import { Navigate } from "react-router-dom";
+import { useState } from "react";
+
 import Input from "../generals/Input"
 
 function Header() {
+    const [searchParams, setSearchParams] = useSearchParams()
+    const navigate = useNavigate();
+    
+    // const handleKeyDown = (e) => {
+    //     if (e.key === 'Enter') {
+    //         // e.preventDefault();
+    //         const query = e.target.value.trim();
+    //         if (query) {
+    //             navigate(`/search?q=${encodeURIComponent(query)}`);
+    //         }
+    //     }
+    // };
+    // const [ isActive, setIsActive ] = useState(true)
+
+    // const location = useLocation()
+
+    // function handleClick(event) {
+    //     if (location.pathname === '/search') {
+    //         event.preventDefault();
+    //         window.location.reload();
+    //     }
+    // }
+
     return (
         <div className="flex flex-row justify-between items-center p-4 bg-[#0d0d0dff] shadow-header">
             <nav className="">
@@ -28,18 +54,10 @@ function Header() {
                     </li>
                 </ul>
             </nav>
-            <NavLink 
+            <NavLink to={`/search${searchParams ? '?' : ''}${searchParams}`} 
                 className="text-white text-[11px] font-[400] font-roboto uppercase">
                 Поиск
             </NavLink>
-            <form className="min-w-90 mx-2 hidden"
-                action="POST">
-                <Input
-                    type="text"
-                    id="search"
-                    name="search"
-                    placeholder="Поиск по блогу"></Input>
-            </form>
         </div>
     )
 }

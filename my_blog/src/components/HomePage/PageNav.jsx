@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 function PageNav() {
     return (
-        <nav className="w-full flex justify-center">
+        <nav className="w-full flex justify-center mt-12">
             <ul className="flex flex-row gap-2">
                 <NavLink className={"shadow-pagenav-base flex items-center justify-center w-10 h-10 bg-[#0d0d0dff] rounded-md"}>
                     <li className="text-white font-roboto text-[14px] font-normal">

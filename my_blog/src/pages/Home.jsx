@@ -9,15 +9,22 @@ import PageNav from "../components/HomePage/PageNav";
 
 function Home() {
   return (
-    <div className="mx-12">
+    <div className="">
         <main className="flex flex-col w-full items-center max-w-150">
             <Stories></Stories>
             <AddPost></AddPost>
             <SimplePost></SimplePost>
             <VideoPost></VideoPost>
-            <NormalPost/>
+            <NormalPost
+              poster="src/assets/images/Rectangle 5-1.png"
+              title="Как я сходил на FrontEnd Conf 2021"
+              textPreview="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat."
+              tags={["создание сайтов", ]}
+              linkName="читать"
+              linkTo="/post/1"
+              ></NormalPost>
         </main>
-        <footer className="my-12 max-w-150">
+        <footer className="max-w-150">
             <PageNav></PageNav>
         </footer>
     </div>

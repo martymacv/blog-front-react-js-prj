@@ -13,7 +13,10 @@ function Layout() {
             <header>
                 <Header/>
             </header>
-            <Outlet className="w-full"/>
+            <main className="m-12">
+              <Outlet className="w-full"/>
+            </main>
+            
         </div>
     </div>
   );
