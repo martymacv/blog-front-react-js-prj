@@ -6,6 +6,7 @@ import PostDetail from "./pages/PostDetail";
 import Auth from "./pages/Auth";
 import UserProfile from "./pages/UserProfile";
 import SearchResult from "./pages/SearchResult";
+import Portfolio from "./pages/Portfolio";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       { path: "login", element: <Auth /> },
       { path: "profile/:userId", element: <UserProfile /> },
       { path: "search/", element: <SearchResult /> },
+      { path: "profile/:userId/portfolio/", element: <Portfolio /> },
     //   { path: "category/:categoryId", element: <Category /> },
     //   { path: "product/:productId", element: <ProductDetails /> },
     //   { path: "*", element: <NotFound /> },
