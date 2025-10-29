@@ -3,7 +3,10 @@ import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import PostDetail from "./pages/PostDetail";
-import Auth from "./pages/Auth";
+import LoginForm from "./pages/Auth/LoginForm";
+import RegistrationFrom from "./pages/Auth/RegistrationForm";
+import ConfirmEmailForm from "./pages/Auth/ConfirmEmailForm";
+import RecoveryForm from "./pages/Auth/RecoveryForm";
 import UserProfile from "./pages/UserProfile";
 import SearchResult from "./pages/SearchResult";
 import Portfolio from "./pages/Portfolio";
@@ -16,7 +19,13 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       // { path: "old-home", element: <Navigate to={"/"} /> },
       { path: "post/:postId", element: <PostDetail /> },
-      { path: "login", element: <Auth /> },
+      { path: "login", element: <Navigate to="/auth/login" /> },
+      { path: "auth/login", element: <LoginForm /> },
+      { path: "registration", element: <Navigate to="/auth/registration" /> },
+      { path: "auth/registration", element: <RegistrationFrom /> },
+      { path: "auth/confirm-email", element: <ConfirmEmailForm /> },
+      { path: "recovery", element: <Navigate to="/auth/recovery" /> },
+      { path: "auth/recovery", element: <RecoveryForm /> },
       { path: "profile/:userId", element: <UserProfile /> },
       { path: "search/", element: <SearchResult /> },
       { path: "profile/:userId/portfolio/", element: <Portfolio /> },
