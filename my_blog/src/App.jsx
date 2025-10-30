@@ -11,6 +11,8 @@ import UserProfile from "./pages/UserProfile";
 import SearchResult from "./pages/SearchResult";
 import Portfolio from "./pages/Portfolio";
 
+import { confirmAction, loginAction, registrationAction } from "./actions/authActions";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,10 +22,22 @@ const router = createBrowserRouter([
       // { path: "old-home", element: <Navigate to={"/"} /> },
       { path: "post/:postId", element: <PostDetail /> },
       { path: "login", element: <Navigate to="/auth/login" /> },
-      { path: "auth/login", element: <LoginForm /> },
+      { 
+        path: "auth/login",
+        element: <LoginForm />,
+        action: loginAction
+      },
       { path: "registration", element: <Navigate to="/auth/registration" /> },
-      { path: "auth/registration", element: <RegistrationFrom /> },
-      { path: "auth/confirm-email", element: <ConfirmEmailForm /> },
+      { 
+        path: "auth/registration",
+        element: <RegistrationFrom /> ,
+        action: registrationAction
+      },
+      { 
+        path: "auth/confirm-email",
+        element: <ConfirmEmailForm />,
+        action: confirmAction
+      },
       { path: "recovery", element: <Navigate to="/auth/recovery" /> },
       { path: "auth/recovery", element: <RecoveryForm /> },
       { path: "profile/:userId", element: <UserProfile /> },
