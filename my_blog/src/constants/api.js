@@ -1,5 +1,28 @@
 export const API_BASE_URL = 'http://localhost:8000';
 
+export function API_DATA(method, bodyData = null, options = {}) {
+    const headers = {
+        "Content-Type": "application/json",
+        ...options.headers,
+    };
+    const token = localStorage.getItem('access_token');
+
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const config = {
+        credentials: 'include',
+        method, headers, ...options
+    };
+
+    if (bodyData) {
+        config.body = JSON.stringify(bodyData);
+    }
+
+    return config;
+}
+
 export const API_ENDPOINTS = {
   AUTH: {
     LOGIN: '/auth/user/token/',

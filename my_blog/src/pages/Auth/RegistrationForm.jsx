@@ -12,8 +12,8 @@ function RegistrationFrom() {
     useEffect(() => {
         if (actionData?.success) {
             console.log(actionData)
-            localStorage.setItem('userId', actionData.user.pk);
-            localStorage.setItem('isConfirmed', actionData.user.is_comfirmed);
+            localStorage.setItem('auth:userId', actionData.user.pk);
+            localStorage.setItem('user:isConfirmed', actionData.user.is_comfirmed);
             console.log(localStorage)
             navigate(actionData.redirect);
         }

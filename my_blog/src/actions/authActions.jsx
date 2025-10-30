@@ -1,20 +1,15 @@
-import { API_BASE_URL, API_ENDPOINTS } from '../constants';
+import { API_BASE_URL, API_DATA, API_ENDPOINTS } from '../constants';
 import { redirect } from "react-router-dom";
 
 export async function registrationAction({ request }) {
     const formData = await request.formData();
     const email = formData.get('email');
     const password = formData.get('password');
+    const bodyData = { email, password }
 
     const response = await fetch(
         `${API_BASE_URL}${API_ENDPOINTS.AUTH.REGISTER}`, 
-        {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, password }),
-        }
+        API_DATA("POST", bodyData)
     );
 
     if (response.ok) {
@@ -31,59 +26,48 @@ export async function loginAction({ request }) {
     const formData = await request.formData();
     const email = formData.get('email');
     const password = formData.get('password');
+    const bodyData = { email, password }
 
     const response = await fetch(
         `${API_BASE_URL}${API_ENDPOINTS.AUTH.LOGIN}`,
-        {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "accept": "application/json"
-            },
-            body: JSON.stringify({ email, password }),
-        }
+        API_DATA("POST", bodyData)
     );
 
     const data = await response.json();
-
+    
     if (response.ok) {
         if (data.access) {
-            localStorage.setItem('access_token', data.access);
+            localStorage.setItem('auth:access_token', data.access);
         }
         if (data.refresh) {
-            localStorage.setItem('refresh_token', data.refresh);
+            localStorage.setItem('auth:refresh_token', data.refresh);
         }
-
         return redirect('/');
     }
 }
 
 export async function confirmAction({ request }) {
-    const userId = localStorage.getItem('userId')
+    const userId = localStorage.getItem('auth:userId')
     const formData = await request.formData();
-    const confirmCode = formData.get('confirmCode');
+    const confirm_code = formData.get('user:confirmCode');
+    const bodyData = { confirm_code }
 
     const response = await fetch(
         `${API_BASE_URL}${API_ENDPOINTS.AUTH.CONFIRM(userId)}`,
-        {
-            method: "PUT",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ confirm_code: confirmCode }),
-        }
+        API_DATA("PUT", bodyData)
     );
 
     const data = await response.json();
 
     if (response.ok) {
-        if (data.access) {
-            localStorage.setItem('access_token', data.access);
-        }
-        if (data.refresh) {
-            localStorage.setItem('refresh_token', data.refresh);
-        }
-
         return redirect('/auth/login');
     }
+}
+
+export async function logoutAction() {
+    Object.keys(localStorage)
+        .filter((item) => item.startsWith('auth:'))
+        .forEach((item) => localStorage.removeItem(item));
+    
+    return redirect('/auth/login');
 }

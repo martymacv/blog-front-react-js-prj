@@ -1,8 +1,8 @@
 function ActionButton({ children, variant = "primary", ...props }) {
-    const baseStyles = "w-fit h-fit py-2 px-4 rounded-md font-roboto text-[12px] font-normal"
+    const baseStyles = "cursor-pointer transition-transform duration-200 w-fit h-fit py-2 px-4 rounded-md font-roboto text-[12px] font-normal"
 
     const variants = {
-        primary: "bg-[#3137c9ff] text-[#ffffffff]"
+        primary: "bg-[#3137c9ff] text-[#ffffffff] hover:scale-105 active:duration-50 active:scale-95"
     }
 
     return (

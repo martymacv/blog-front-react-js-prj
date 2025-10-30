@@ -10,8 +10,9 @@ import RecoveryForm from "./pages/Auth/RecoveryForm";
 import UserProfile from "./pages/UserProfile";
 import SearchResult from "./pages/SearchResult";
 import Portfolio from "./pages/Portfolio";
+import LogoutForm from "./pages/Auth/LogoutForm";
 
-import { confirmAction, loginAction, registrationAction } from "./actions/authActions";
+import { confirmAction, loginAction, logoutAction, registrationAction } from "./actions/authActions";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         path: "auth/login",
         element: <LoginForm />,
         action: loginAction
+      },
+      { 
+        path: "auth/logout",
+        element: <LogoutForm />,
+        action: logoutAction
       },
       { path: "registration", element: <Navigate to="/auth/registration" /> },
       { 

@@ -1,12 +1,17 @@
-import { NavLink, useLocation, useNavigate, useSearchParams } from "react-router-dom"
+import { NavLink, useActionData, useLocation, useNavigate, useSearchParams } from "react-router-dom"
 import { Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Input from "../generals/Input"
 
 function Header() {
+    const actionData = useActionData();
+
+    
+    
     const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate();
+    // const hasToken = localStorage.getItem('refresh_token')
     
     // const handleKeyDown = (e) => {
     //     if (e.key === 'Enter') {
@@ -17,7 +22,17 @@ function Header() {
     //         }
     //     }
     // };
-    // const [ isActive, setIsActive ] = useState(true)
+    const [ isLogin, setIsLogin ] = useState(localStorage.getItem('auth:refresh_token'));
+
+    useEffect(() => {
+        setIsLogin(localStorage.getItem('auth:refresh_token'));
+        console.log(actionData);
+    }, [actionData])
+
+    function handleClick() {
+        setIsLogin(localStorage.getItem('auth:refresh_token'));
+        navigate("/auth/logout")
+    }
 
     // const location = useLocation()
 
@@ -48,9 +63,14 @@ function Header() {
                         </NavLink>
                     </li>
                     <li className="text-white text-[11px] font-[400] font-roboto uppercase">
-                        <NavLink to={"/login"}>
-                            Войти
-                        </NavLink>
+                        {!isLogin ? (
+                            <NavLink 
+                                to={"/login"}>
+                                Войти
+                            </NavLink>
+                        ) : (
+                            <a href="/auth/logout" onClick={handleClick}>Выйти</a>
+                        )}
                     </li>
                 </ul>
             </nav>
