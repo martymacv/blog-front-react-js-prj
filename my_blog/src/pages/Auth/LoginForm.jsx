@@ -3,10 +3,13 @@ import { Link, Form, useActionData } from "react-router-dom"
 import ActionButton from "../../components/generals/ActionButton";
 import Input from "../../components/generals/Input";
 import Title from "../../components/generals/Title";
+import { useState } from "react";
 
 function LoginForm() {
-    const actionData = useActionData();
-    console.log(actionData);
+    // const actionData = useActionData();
+    // console.log(actionData);
+    
+
     return (
         <div className="flex flex-col gap-5 m-12 items-center max-w-70">
             <Form 
@@ -19,11 +22,13 @@ function LoginForm() {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    required
                 ></Input>
                 <Input 
                     type="password"
                     name="password"
                     placeholder="Пароль"
+                    required
                 ></Input>
                 <ActionButton
                     type="submit"
