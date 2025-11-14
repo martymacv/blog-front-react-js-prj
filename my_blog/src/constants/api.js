@@ -1,12 +1,13 @@
-export const API_BASE_URL = 'http://localhost:8000';
+export const API_BASE_URL = 'http://localhost:8008';
 
 export function API_DATA(method, bodyData = null, options = {}) {
     const headers = {
         "Content-Type": "application/json",
         ...options.headers,
     };
-    const token = localStorage.getItem('access_token');
-
+    console.log(headers)
+    const token = localStorage.getItem('auth:access_token');
+    console.log(`token ${token}`)
     if (token) {
         headers['Authorization'] = `Bearer ${token}`;
     }
@@ -19,7 +20,7 @@ export function API_DATA(method, bodyData = null, options = {}) {
     if (bodyData) {
         config.body = JSON.stringify(bodyData);
     }
-
+    console.log(config)
     return config;
 }
 
@@ -34,11 +35,11 @@ export const API_ENDPOINTS = {
   },
   USERS: {
     LIST: '/api/users/',
-    DETAIL: '/api/users/:id/',
+    PROFILE: (userId) => `/profiles/${userId}/`,
   },
   POSTS: {
     LIST: '/api/posts/',
-    DETAIL: '/api/posts/:id/',
+    DETAIL: `/api/posts/:id/`,
   }
 };
 

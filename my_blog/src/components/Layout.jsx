@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom";
 import Header from "./HomePage/Header";
 import Sidebar from "./HomePage/Sidebar";
+import { useGlobalState } from "./GlobalProvider";
 
 function Layout() {
+
   return (
     // <div id="header"className="flex flex-row min-h-screen min-w-[680px] max-w-[1000px] bg-[#181818ff]">
     <div id="header"className="flex flex-row min-h-screen w-full bg-[#181818ff]">

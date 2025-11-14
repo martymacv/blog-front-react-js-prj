@@ -4,12 +4,16 @@ import ActionButton from "../../components/generals/ActionButton";
 import Input from "../../components/generals/Input";
 import Title from "../../components/generals/Title";
 import { useState } from "react";
+import { useGlobalState } from "../../components/GlobalProvider";
 
 function LoginForm() {
-    // const actionData = useActionData();
-    // console.log(actionData);
+    const {
+        handleLogStatus
+    } = useGlobalState();
     
-
+    function handleLogin() {
+        handleLogStatus("login");
+    }
     return (
         <div className="flex flex-col gap-5 m-12 items-center max-w-70">
             <Form 
@@ -32,6 +36,7 @@ function LoginForm() {
                 ></Input>
                 <ActionButton
                     type="submit"
+                    onClick={handleLogin}
                     >Войти</ActionButton>
             </Form>
             <div className="flex flex-row gap-4">

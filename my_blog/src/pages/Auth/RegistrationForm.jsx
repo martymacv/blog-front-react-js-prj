@@ -4,6 +4,7 @@ import ActionButton from "../../components/generals/ActionButton";
 import Input from "../../components/generals/Input";
 import Title from "../../components/generals/Title";
 import { useEffect, useState } from "react";
+import { CHAR_REPLACER } from "../../components/utils";
 
 function RegistrationFrom() {
     const actionData = useActionData();
@@ -24,7 +25,7 @@ function RegistrationFrom() {
     const [password2, setPassword2] = useState('');
     const [pwdValidation, setPwdValidation] = useState({ base: false });
     const [pwdMatched, setPwdMatched] = useState({ isMatched: false });
-    const [emailValidation, setEmailValidation] = useState(false);
+    const [emailValidation, setEmailValidation] = useState({ emailFormat: false });
 
     function validatePassword( pwd ) {
         const newValidation = {};
@@ -82,19 +83,19 @@ function RegistrationFrom() {
     }
 
     function handleEmailChange( event ) {
-        const newEmail = event.target.value;
+        const newEmail = CHAR_REPLACER.email(event.target.value);
         setEmail(newEmail);
         validateEmail(newEmail);
     }
 
     function handlePwdChange( event ) {
-        const newPwd = event.target.value;
+        const newPwd = CHAR_REPLACER.pwd(event.target.value);
         setPassword(newPwd);
         validatePassword(newPwd);
     };
 
     function handlePwd2Change( event ) {
-        const newPwd = event.target.value;
+        const newPwd = CHAR_REPLACER.pwd(event.target.value);
         setPassword2(newPwd);
         validatePasswordMatched(password, newPwd);
     };
@@ -114,6 +115,7 @@ function RegistrationFrom() {
                 <Input 
                     type="email"
                     name="email"
+                    value={email}
                     placeholder="Введите Email"
                     required
                     requirements={EMAIL_REQUIREMENTS}
@@ -144,6 +146,7 @@ function RegistrationFrom() {
                     state={pwdMatched}
                     onChange={handlePwd2Change}
                     variant={password2 ? isPasswordMatched ? 'valid': 'invalid' : 'primary'}
+                    value={password2}
                 />
                 <ActionButton
                     type="submit"

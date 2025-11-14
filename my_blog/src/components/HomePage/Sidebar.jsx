@@ -1,6 +1,79 @@
+import { useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom'
+import { API_BASE_URL, API_DATA, API_ENDPOINTS } from '../../constants';
+import { useGlobalState } from '../GlobalProvider';
+
+const initialState = {
+    profile: {},
+    status: "loading",
+}
+
+function reducer(state, action) {
+    switch (action.type) {
+        case "profileData":
+            return {
+                ...state,
+                profile: action.payload,
+                status: "ready",
+            };
+        case "dataFailed":
+            return {
+                ...state,
+                status: "error"
+            };
+        case "logout":
+            return {
+                ...state,
+                status: "logout"
+            }
+        default:
+            console.log(state);
+            return
+    }
+}
 
 export default function Sidebar() {
+    const [state, dispatch ] = useReducer(reducer, initialState);
+    const {
+        accessToken,
+        logStatus
+    } = useGlobalState();
+
+    useEffect(() => {
+        if (logStatus === "logout") {
+            dispatch({ type: "logout" });
+            return;
+        }
+        
+        async function fetchData() {
+            try {
+                const response = await fetch(
+                    `${API_BASE_URL}${API_ENDPOINTS.USERS.PROFILE(24)}`, 
+                    API_DATA("GET")
+                );
+                console.log(`${API_BASE_URL}${API_ENDPOINTS.USERS.PROFILE(24)}`)
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch! Error: ${response.status}`)
+                }
+                const data = await response.json()
+                dispatch({ type: "profileData", payload: data })
+            } catch (error) {
+                dispatch({ type: "dataFailed", payload: error })
+            }
+        };
+        fetchData();
+    }, [logStatus])
+
+    if (state.status === "loading"){
+      return <p className='text-[#dededeff]'>Loading data, please wait...</p>
+    }
+    if (state.status === "error"){
+        return <p className='text-[#dededeff]'>Failed to fetch data. Please try again!</p>
+    }
+    if (state.status === "logout"){
+        return <p className='text-[#dededeff]'>Please, login...</p>
+    }
+
     return (
         <>
             <div className='relative flex flex-col items-center justify-start w-full h-[230px] mb-3'>
@@ -10,7 +83,8 @@ export default function Sidebar() {
                 </div>
             </div>
             <div className='flex flex-col items-center justify-center'>
-                <h1 className='text-white text-[18px] font-[400] font-roboto'>Ролан Закиров</h1>
+                <h1 className='text-white text-[18px] font-[400] font-roboto'>
+                    {state.profile.first_name} {state.profile.last_name}</h1>
                 <p className='text-[#dededeff] text-[14px] font-[300] font-roboto'>Front-end разработчик</p>
             </div>
             <div className='flex flex-row gap-4 items-center justify-center pb-3'>
