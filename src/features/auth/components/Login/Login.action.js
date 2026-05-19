@@ -32,9 +32,9 @@ export async function loginAction({ request, params }) {
     } else {
 
         const formData = await request.formData();
-        const primary_email = formData.get('email');
+        const email = formData.get('email');
         const password = formData.get('password');
-        const bodyData = { primary_email, password }
+        const bodyData = { email, password }
 
         const response = await fetch(
             `${API_BASE_URL}${API_ENDPOINTS.AUTH.LOGIN}`,
